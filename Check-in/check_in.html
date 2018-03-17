@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Регистрация</title>
+	<link rel="stylesheet" href="css/check_in_style.css">
+	<link rel="stylesheet" href="fonts/fonts.css">
+</head>
+<body>
+	<header>
+			<div class="header">
+				<form action="..\Log-in\log-in.php">
+					<input  type="image" id="log_in" name="log_in" src="images/log_in.png" alt="Войти"></input>
+				</form>
+			</div>
+	</header>
+		<div class="wrapper_big">
+			<div class="wrapper">
+				<div class="box_bkg">
+					<div class="icon"></div>
+					<div class="register_now"></div>
+						<form action=<?=$_SERVER['SCRIPT_NAME']?> method = "POST">
+							<div class="field" id="first_field">
+								<span class="username_set_icon"><input type="text" name="Name"  class="color-text" placeholder="First name" maxlength="18"></span>
+							</div>
+							<div class="field">
+								<span class="username_set_icon"><input type="text" name="LastName" class="color-text" placeholder="Last name" maxlength="18"></span>
+							</div>
+							<div class="field">
+								<span class="username_set_icon"><input type="text"  name="Login" class="color-text" placeholder="Login" maxlength="18"></span>
+							</div>
+							<div class="field" >
+								<span class="password_set_icon"><input type="password" name="Password" class="color-text" class="password_set_icon_try" placeholder="Password" maxlength="30"></span>
+							</div>
+								<div class="field" >
+								<span class="password_set_icon"><input type="password" name="Repeat_Password" class="color-text" placeholder="Confirm password" maxlength="30"></span>
+							</div>
+							<input  type="image" id="submit" name="Authorization_button" src="images/check_in.png" value = "Зарегистрироваться"></input>
+						</form>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

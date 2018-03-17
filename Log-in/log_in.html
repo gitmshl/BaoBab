@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Вход</title>
+	<link rel="stylesheet" href="css/check_in_style.css">
+	<link rel="stylesheet" href="fonts/fonts.css">
+</head>
+<body id="log_in_body">
+	<header>
+			<div class="header">
+				<form action="..\Check-in\check-in.php">
+					<input  type="image" id="log_in" name="check-in" src="images/check_in_small.png" alt="Зарегистрироваться"></input>
+				</form>
+			</div>
+	</header>
+		<div class="wrapper_big">
+			<div class="wrapper_log_in">
+				<div class="box_bkg_log_in">
+					<div class="log_in_icon"></div>
+					<div class="log_in_text"></div>
+						<form action=<?=$_SERVER['SCRIPT_NAME']?> method = "POST">
+							<div class="field" id="first_field">
+								<span class="username_set_icon"><input type="text" name="Login"  class="color-text" placeholder="Login" maxlength="18"></span>
+							</div>
+							<div class="field" >
+								<span class="password_set_icon"><input type="password" name="Password" class="color-text" class="password_set_icon_try" placeholder="Password" maxlength="30"></span>
+							</div>
+							<input  type="image" id="submit" name="Log-in_button" src="images/log_in_large.png" value = "Войти"></input>
+						</form>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
