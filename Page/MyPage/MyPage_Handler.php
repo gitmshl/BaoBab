@@ -10,9 +10,13 @@
 	$_SESSION['User_Page']['Name'] = $_SESSION['User']['Name'];
 	$_SESSION['User_Page']['LastName'] = $_SESSION['User']['LastName'];
 	$_SESSION['User_Page']['img'] = $_SESSION['User']['img']; /// добавляем путь к аватарке
-?>
-<!--То, что ниже - это вызов обработчиков блоков на "Моей странице"-->
-<?php
+
+	
+	include_once "..\..\Update_Functions\Update_Page_Informations.php";
+	Update();
+
+/// <!--То, что ниже - это вызов обработчиков блоков на "Моей странице"-->
+
 	/*
 	/// Добавляем обработчики "вездесущих" блоков("Домашний блок", поиск и выход)
 	include_once "..\..\Common_Buttons\Home_Block\Home_Block.php";
@@ -25,4 +29,9 @@
 	include_once "\Blocks\Wall\Wall_Treatment.php";
 	// Пока что этого пункта не будет, там в первой версии не такая сложная структура
 	//include_once "\Blocks\Basic_Information\Basic_Information_Treatment.php";
+	////Редиректная часть. Очищаем массив Request, а точнее ее частичные элементы, чтобы не было ///добавления одной и той же записи при обновлении страницы
+	if (isset($_REQUEST['add']) && $_REQUEST['add'] == 1)
+		header("Location: MyPage.php");
+	if (isset($_REQUEST['delete_post']) && $_REQUEST['delete_post'] == 1)
+		header("Location: MyPage.php");
 ?>

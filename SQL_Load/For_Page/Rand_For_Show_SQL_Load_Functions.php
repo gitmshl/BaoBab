@@ -27,7 +27,8 @@
 		{
 			$Inf = $result_DB->fetch_assoc();
 			$Friends[$i]['Name'] = $Inf['Name'];
-			$Friends[$i]['img'] = $Inf['img'];
+			$Friends[$i]['img'] = str_replace("\"", "", $Inf['img']);
+			$Friends[$i]['img'] = "..\..\Files\User_".$Inf['id_Friend']."\\".$Friends['img'];
 		}
 	}
 		$Users_DB->close();

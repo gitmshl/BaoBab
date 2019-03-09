@@ -12,10 +12,11 @@
 	function Get_Peoples($N, $query, &$count)
 	{
 		$Users_DB = new mysqli("localhost", "root", "", "Users_Main_Information");
-		$result = $Users_DB->query("SELECT `id`, `Name`, `LastName` FROM `Information`
-		WHERE (`Name`Like '%$query%') || (`LastName` Like '%$query%')
-		|| (`Login` Like '%$query%') Limit $N");
+		$result = $Users_DB->query("SELECT * FROM `Information`
+		WHERE (`Name`Like '$query%') || (`LastName` Like '$query%')
+		|| (`Login` Like '$query%') Limit $N");
 		$count = $result->num_rows;
+		$Users_DB->close();
 		return $result;
 	}
 	
@@ -27,8 +28,9 @@
 	{
 		$Users_DB = new mysqli("localhost", "root", "", "Groups");
 		$result = $Users_DB->query("SELECT `id`, `Name`, `Count`, `img` FROM `Groups`
-		WHERE `Name`Like '%$query%' Limit $N");
+		WHERE `Name`Like '$query%' Limit $N");
 		$count = $result->num_rows;
+		$Users_DB->close();
 		return $result;
 	}
 ?>

@@ -3,7 +3,7 @@ body{
 	padding:0;
  	background-color:#EDEEF0;
 	min-width:960px;
-	width:100vw;
+	width:100%;
 }
 
 header{
@@ -16,6 +16,7 @@ header{
 .placeholder_style::-webkit-input-placeholder{
 	color:#91979A;
 	font-family:blogger, Arial, serif;
+	padding-left:10px;
 }
 
 .header{
@@ -59,6 +60,7 @@ header{
 	background-repeat:no-repeat;
 	background-position:0 0px;
 	height:30px;
+	width:280px;
 }
 
 #search_button{
@@ -75,7 +77,6 @@ input[type="text"]{
 	font-size:20px;
 	height:30px;
 	width:280px;
-	padding-left:10px;
 	border:none;
 	background:none;
 }
@@ -127,30 +128,31 @@ a.right_top:hover{
 	width:70%;
 	height:100vh;
 	margin:0 15%;
-	font-family:rubikregular,blogger, Arial, serif;
-	min-width:800px;
-}
-
-.leftSidebar ul{
-	padding-left:10px;
+	font-family:robotothin,rubikregular,blogger, Arial, serif;
+	min-width:70%;
 }
 
 .leftSidebar{
-	width:20%;
+	width:18%;
 	height:100vh;
 	padding-top:5px;
 	/* background-color:white; */
 	float:left;
-	border-left:1px solid #dfe2e8;
 }
 
 .left_sidebar_ul{
+	padding-left:9px;
+	margin-top:0;
+}
+
+.left_sidebar_ul{
+	border-left: 1px solid #dfe2e8;
 	list-style-type:none;
 	font-size:20px;
 }
 
 .left_sidebar_ul li{
-	padding-bottom:12px;
+	margin-bottom:12px;
 }
 
 .left_sidebar_ul a{
@@ -159,18 +161,33 @@ a.right_top:hover{
 	color:#3F8CB8;
 }
 
+a#plus{
+	margin-left:8px;
+	border:1px solid #405284;
+	padding:0 5px;
+	border-radius:6px;
+}
+
 .middle_content{
+	margin-left:1%;
+	height: 100%;	
 	float:left;
 	width:25%;
 }
 
+#marg_bot_10px{
+	margin-bottom:10px;
+}
+
 .avatar{
 	background-color:white;
-	margin-bottom:20px;
+	margin-bottom:5px;
 	text-align:center;
 }
 
 #avatar{
+	display:block;
+	margin:auto;
 	max-width:96%;
 	padding:1% 3px;
 	max-height:60vh;
@@ -185,20 +202,37 @@ a.right_top:hover{
 
 .table td{
 	padding:6px;
+	max-width: 33%;
 }
 
 .ava{
-	max-width:60px;
+	max-width:100%;
 	max-height:60px;
 }
 
 .friends_v1,.groups_v1{					/*	ЭТО ЕСЛИ 4 И БОЛЕЕ ДРУЗЕЙ  */
 	margin-bottom:10px;
+	font-family: rubikregular,blogger, Arial, serif;
 }
 
 .friends_v2,.groups_v2{					/*	ЭТО ЕСЛИ 1 - 3 ДРУГА  */
 	background-color:white;
 	margin-bottom:10px;
+	font-family: rubikregular,blogger, Arial, serif;
+}
+
+.friends_v1 table,
+.groups_v1 table,
+.friends_v2 table,
+.groups_v2 table{					/*	ЭТО ЕСЛИ 1 - 3 ДРУГА  */
+width:100%;
+}
+
+.friends_v1 table td,
+.groups_v1 table td,
+.friends_v2 table td,
+.groups_v2 table td{					/*	ЭТО ЕСЛИ 1 - 3 ДРУГА  */
+text-align:center;
 }
 
 #friends_link,#groups_link{
@@ -227,25 +261,95 @@ a:-webkit-any-link{
 }
 
 .person_name{
+	width: 52.5%;
 	float:left;
 	text-align:center;
 	margin-left:10px;
 	margin-bottom:10px;	
-	margin-top:5px;	
 	color:#3F8CB8;
-	
 	font-size:20px;
 	padding-left:2px;
 }
 
 .add_post{
+	margin-left: 10px;
 	width:52.5%;
 	float:left;
-	margin-left:10px;
-	margin-bottom:10px;
+	margin-bottom:15px;
 	display:inline;
 	background-color:white;
-	float: left;
+	border-radius:5px;
+	border:1px solid #dfe2e8;
+}
+
+.file-upload {
+     position: relative; /* Даем возможность делать позиционирование, внутри данного элемента */
+     overflow: hidden; /* Все что выходит за пределы - скрываем */
+     width: 60%; /* Задаем ширину кнопки выбора файла */
+     height: 20px; /* Задаем высоту кнопки выбора файла */
+     background: #6da047;
+     border-radius: 3px;
+     padding: 8px 4px;
+     color: #fff;
+     text-align: center;
+	 margin-bottom: 10px;
+}
+.file-upload:hover {
+     background: #7aad55;
+}
+.file-upload input[type="file"]{
+    display: none; /* Обязательно скрываем настоящий Input File */
+}
+
+.file-upload input[type="submit"]{
+    display: none; /* Обязательно скрываем настоящий Input File */
+}
+
+.file-upload label {
+     /* Растягиваем label на всю возможную площадь блока .file-upload */
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     cursor: pointer;
+}
+.file-upload span {
+     line-height: 36px; /* Делаем вертикальное выравнивание текста, который написан на кнопке */
+}
+
+.confirm_avatar {
+    position: relative; /* Даем возможность делать позиционирование, внутри данного элемента */
+    overflow: hidden; /* Все что выходит за пределы - скрываем */
+    width: 20%; /* Задаем ширину кнопки выбора файла */
+    height: 20px; /* Задаем высоту кнопки выбора файла */
+    background: #6da047;
+    border-radius: 3px;
+    padding: 8px 4px;
+    color: #fff;
+    text-align: center;
+	margin-bottom: 10px;
+}
+.confirm_avatar:hover {
+     background: #7aad55;
+}
+.confirm_avatar input[type="file"],.confirm_avatar input[type="submit"]{
+    display: none; /* Обязательно скрываем настоящий Input File */
+}
+
+.confirm_avatar label {
+     /* Растягиваем label на всю возможную площадь блока .file-upload */
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     cursor: pointer;
+}
+.confirm_avatar span {
+     line-height: 36px; /* Делаем вертикальное выравнивание текста, который написан на кнопке */
 }
 
 #post_file{
@@ -253,8 +357,108 @@ a:-webkit-any-link{
 	padding-bottom:3px;
 }
 
+#add_file{
+	float: left;
+    margin-left: 2%;
+}
+
+#add_file2{
+	float: right;
+    margin-right: 2%;
+}
+
+.wall_file-upload {
+     position: relative; /* Даем возможность делать позиционирование, внутри данного элемента */
+     overflow: hidden; /* Все что выходит за пределы - скрываем */
+     width: 60%; /* Задаем ширину кнопки выбора файла */
+     height: 20px; /* Задаем высоту кнопки выбора файла */
+     background: #6da047;
+     border-radius: 3px;
+     padding: 8px 4px;
+     color: #fff;
+     text-align: center;
+	 margin-bottom: 5px;
+}
+.wall_file-upload:hover {
+     background: #7aad55;
+}
+.wall_file-upload input[type="file"]{
+    display: none; /* Обязательно скрываем настоящий Input File */
+}
+
+.wall_file-upload input[type="submit"]{
+    display: none; /* Обязательно скрываем настоящий Input File */
+}
+
+.wall_file-upload label {
+     /* Растягиваем label на всю возможную площадь блока .file-upload */
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     cursor: pointer;
+}
+.wall_file-upload span {
+     line-height: 36px; /* Делаем вертикальное выравнивание текста, который написан на кнопке */
+}
+
+.wall_confirm_avatar {
+    position: relative; /* Даем возможность делать позиционирование, внутри данного элемента */
+    overflow: hidden; /* Все что выходит за пределы - скрываем */
+    width: 20%; /* Задаем ширину кнопки выбора файла */
+    height: 20px; /* Задаем высоту кнопки выбора файла */
+    background: #6da047;
+    border-radius: 3px;
+    padding: 8px 4px;
+    color: #fff;
+    text-align: center;
+	margin-bottom: 5px;
+}
+.wall_confirm_avatar:hover {
+     background: #7aad55;
+}
+.wall_confirm_avatar input[type="file"],.wall_confirm_avatar input[type="submit"]{
+    display: none; /* Обязательно скрываем настоящий Input File */
+}
+
+.wall_confirm_avatar label {
+     /* Растягиваем label на всю возможную площадь блока .file-upload */
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     cursor: pointer;
+}
+.wall_confirm_avatar span {
+     line-height: 36px; /* Делаем вертикальное выравнивание текста, который написан на кнопке */
+}
+
+#wall_post_file{
+	float:left;
+	padding-bottom:3px;
+}
+
+#wall_add_file{
+	float: left;
+    margin-left: 1%;
+}
+
+#wall_add_file2{
+	float: right;
+    margin-right: 1%;
+}
+
 #post_textarea{
-	resize:none;
+	width: 98%;
+    height: 100px;
+    resize: none;
+    display: block;
+    margin: 2px auto 5px;
+    border-radius: 5px;
 }
 
 .wall{
@@ -279,6 +483,8 @@ a:-webkit-any-link{
 }
 
 .post p{
+	width:99%;
+	word-wrap:break-word;
 	-webkit-margin-before: 0;
     -webkit-margin-after: 0;
 	/* padding:5px 0 10px; */

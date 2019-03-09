@@ -78,6 +78,13 @@ if (!$err_login_busy && !$err_login_correct && !$err_lastname_correct
 		/// Переносим в файл Images пользователя стандратное изображение из Common_Images
 		copy("..\Common_Images\Standart.jpg", $way."\standart.jpg");
 		$_SESSION['User']['img'] = "..\\".$way."\standart.jpg"; /// устанавливаем путь к аватарке
+		$_SESSION['User']['base_img_name'] = "standart.jpg";
+		
+		///Создаем папку в папке Dialogs_Files, где будут лежать файлы с диалогов
+		///пользователя
+		$way = "..\Dialogs_Files\User_".$_SESSION['User']['id'];
+		mkdir($way);
+	
 	///Переходим на другую страницу
 		header("Location: ..\Page\MyPage\MyPage.php");
 		exit;

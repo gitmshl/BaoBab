@@ -36,6 +36,7 @@
 			$Wall[$q]['Text'] = $Inf['Text'];
 			$Wall[$q]['File'] = $Inf['File'];
 			$Wall[$q]['Time'] = $Inf['Time'];
+			$Wall[$q]['id'] = $Inf['id'];
 			$q++;
 		}
 		$Users_DB->close();

@@ -1,0 +1,123 @@
+<!doctype html>
+ <html lang="ru-RU">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>My page</title>
+	<link rel="stylesheet" href="css/my_page_style.css">
+	<link rel="stylesheet" href="fonts/fonts.css">
+	<link rel="stylesheet" href="fonts/rubik/rubik.css">
+	<link rel="stylesheet" href="fonts/roboto_vk_font/roboto_vk_font.css">
+ </head>
+ <body>
+ 	<header>
+			<div class="header">
+				<div class="subheader">
+					<div class="logo"></div>
+					<div class="search_block">
+						<form action="..\GLOBAL_SEARCH\GS_ALL.php">
+							<div class="search_field">
+									<input type="text" id="search_input" name="Global_Search_Line" class="placeholder_style" placeholder="Search...">
+									<input type="image" id="search_button" src="images/search_button.png" alt="Search">
+							</div>
+						</form>
+					</div>
+					<div class="right_column">
+						<div class="signOut_block">
+							<form action="">
+								<div class="signOut_a">
+									<a class="right_top" href="Options_And_Exit\Options_And_Exit.php">Sign out</a>
+								</div>
+							</form>
+						</div>
+						<div class="options_block">
+							<form action="">
+								<div class="options_a">
+									<a class="right_top" href="OPTIONS">Options</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+	</header>
+	<div class="clear"></div>
+	<div class="wrapper">
+		<div class="leftSidebar">
+			<ul class="left_sidebar_ul">
+				<li>
+					<div class="my_page">
+						<a href="MyPage.php">
+							My page
+						</a>
+					</div>
+				</li>
+				<?php
+					if ($_SESSION['User']['New_Friend'])
+					{
+				?>
+				<li>
+					<div class="my_friends">
+						<a href="..\Friends\MFS.php">
+							My friends
+						</a>
+						<a href="..\Page\Friends\RFF.php" id="plus"> + </a>
+					</div>
+				</li>
+				<?php
+					}
+					else
+					{
+					?>
+					<li>
+						<div class="my_friends">
+							<a href="..\Friends\MFS.php">
+								My friends
+							</a>
+						</div>
+					</li>
+					<?php
+					}
+					?>
+					<?php
+						if ($_SESSION['User']['New_Message'])
+						{
+					?>
+				<li>
+					<div class="my_messages">
+						<a href="">
+							My messages
+						</a>
+						<a href="..\Friends\RFF.php" id="plus"> + </a>
+					</div>
+				</li>
+					<?php
+						}
+						else
+						{
+						?>
+				<li>
+					<div class="my_messages">
+						<a href="">
+							My messages
+						</a>
+					</div>
+				</li>
+						<?php
+						}
+						?>
+				<li>
+					<div class="my_news">
+						<a href="">
+							My news
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="my_groups">
+						<a href="">
+							My groups
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>

@@ -43,6 +43,7 @@ if (isset($_REQUEST['Log-in_button'])) //Если кнопка входа наж
 		$way = "..\Files\User_".$_SESSION['User']['id'];
 		
 		$_SESSION['User']['img'] = "..\\".$way."\\".$_REQUEST['img']; /// устанавливаем путь к аватарке
+		$_SESSION['User']['base_img_name'] = $_REQUEST['img']; /// оставляет базовое имя аватарки(много где пригодится в будущем ;)
 		
 		header("Location: ..\Page\MyPage\MyPage.php");
 		exit;
